@@ -1,0 +1,48 @@
+ci_fact: 1.645
+
+hfnoise_template:
+  factor: 1.0
+  source: filename/variance.nc
+  timescale: 0.16
+  type: noise
+  variable: sla_hp
+
+errors:
+- error1
+- error2
+- error3
+
+input:
+  filename: /filename/variance.nc
+  variable: sea_level_anomaly
+
+output: /filename/uncertainty.nc
+output_t_unit: yr
+output_z_unit: m
+
+orbit:
+    factor: 1
+    value: 0.00033
+    type: drift
+    variable: orbit
+gia_drift:
+    value: 99999
+    type: drift
+
+wtc_noise:                                                                                 
+    value: 99999                                                                       
+    type: noise
+    timescale: 10
+
+j1_j2_bias:
+    value: 99999
+    timing: 2009.07
+    type: bias
+    
+j2_j3_bias:
+    value: 99999
+    timing: 2016.84
+    type: bias
+
+z_fact: 1
+
