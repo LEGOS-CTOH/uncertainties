@@ -1,6 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+"""                                                                                                                     
+    Computation of the uncertainties, for one virtual station.                                                       
+                                                                                                                          
+                                                                                                                          
+    @author: Léna TOLU based on P Prandi's code                                                                           
+    LEGOS/CTOH - 2026                                                                                                     
+    Licence CC-BY version 4                                                                                               
+    """   
+
 """
     perform the analysis of rmsl uncertainties
 """

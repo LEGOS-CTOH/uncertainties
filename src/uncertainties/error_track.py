@@ -1,9 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-'''
-    error manipulation class
-'''
+"""                                                                                      
+    Error manipulation class.                        
+                                                                                           
+                                                                                           
+    @author: Léna TOLU based on P Prandi's code                                            
+    LEGOS/CTOH - 2026                                                                      
+    Licence CC-BY version 4                                                                
+    """   
+
 import logging
 import numpy as np
 #import pyinterp
@@ -77,7 +83,6 @@ class Error(object):
             self._x = nc.variables[position][:]
             self._z = nc.variables[varname][:]
         
-        #if mask == False : crée un masque avec que des False
         if not np.ma.is_masked(self._z):
             self._z = np.ma.array(self._z, mask = np.full(np.shape(self._z), False, dtype=bool))
         
@@ -95,17 +100,8 @@ class Error(object):
         """
             interpolate grid value at given x/y position
         """
-        #ev = pyinterp.bivariate(self._grid, np.array([x]), np.array([y]))
         ev = self._z[position]
         return ev
-        
-    # def _build_interpolator(self):
-    #     """
-    #         build interpolation function
-    #     """
-    #     x_axis = pyinterp.Axis(self._x, is_circle=True)
-    #     self._z[self._z.mask] = float("nan")
-    #     self._grid = pyinterp.Grid2D(x_axis, y_axis, self._z.data)
         
 
     @property

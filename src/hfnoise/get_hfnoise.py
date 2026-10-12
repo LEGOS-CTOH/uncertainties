@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Fri May 31 14:52:27 2024
 
-@author: tolul
 """
+  Computation of the high frequency noise error associated to the geophysical corrections, for one virtual station (R13 177 7). 
+
+
+  @author: Léna TOLU
+  LEGOS/CTOH - 2026
+  Licence CC-BY version 4
+  """
 
 import itertools
 import matplotlib.pyplot as plt

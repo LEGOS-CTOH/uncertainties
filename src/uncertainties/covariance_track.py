@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-"""
-    covariance matrices
-    implements three models for covariances: 
+"""                                                                                      
+    Computation of the error variance_covariance matrices. Implementation of three models :
     - correlated noise
-    - drift
-    - bias
-"""
+    -drift
+    -bias
+
+
+    @author: Léna TOLU based on P Prandi's code                                            
+    LEGOS/CTOH - 2026                                                                      
+    Licence CC-BY version 4                                                                
+    """   
+
 
 import numpy as np
 

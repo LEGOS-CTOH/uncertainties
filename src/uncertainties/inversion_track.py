@@ -1,9 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-"""
-    inversion methods
-"""
+"""                                                                                      
+    Inversion methods.                        
+                                                                                           
+                                                                                           
+    @author: Léna TOLU based on P Prandi's code                                            
+    LEGOS/CTOH - 2026                                                                      
+    Licence CC-BY version 4                                                                
+    """   
+
 
 import numpy as np
 

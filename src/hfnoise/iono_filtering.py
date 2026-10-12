@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[52]:
+"""
+  Filtering of the X-TRACK ionospheric correction.
 
+
+  @author: Fabien Léger
+  LEGOS/CTOH - 2026
+  Licence CC-BY version 4
+  """
 
 from netCDF4 import Dataset
 import numpy as np
@@ -13,7 +19,6 @@ import pandas as pd
 import ephem
 
 
-# In[17]:
 
 
 def MAD_filter(signal, time, corr, ws, tdelta, plot, COEFF=3, LEFT_EXT_SIZE=None,
@@ -123,8 +128,6 @@ def MAD_filter(signal, time, corr, ws, tdelta, plot, COEFF=3, LEFT_EXT_SIZE=None
     return (res, med, ww, gmad)
 
 
-# In[18]:
-
 
 def MEAN_filter(signal, time, corr, ws, tdelta, plot, MIRROR=None, RETURN_EXTENDED=None):
     """
@@ -202,8 +205,6 @@ def MEAN_filter(signal, time, corr, ws, tdelta, plot, MIRROR=None, RETURN_EXTEND
     return (mean, time_out)
 
 
-# In[19]:
-
 
 def binom_array(n):
      """
@@ -214,8 +215,6 @@ def binom_array(n):
          cn[i] = binom(n - 1, i)
      return (cn)
 
-
-# In[20]:
 
 
 def binom(n, k):
@@ -233,8 +232,6 @@ def binom(n, k):
      else:
          return 0
 
-
-# In[21]:
 
 
 def sig_extend_left(signal, time, ws, tdelta, SIMPLE=None):
@@ -272,8 +269,6 @@ def sig_extend_left(signal, time, ws, tdelta, SIMPLE=None):
 
     return (signal, time, len(wt) - 1)
 
-
-# In[22]:
 
 
 def sig_extend_right(signal, time, ws, tdelta, SIMPLE=None):
@@ -314,8 +309,6 @@ def sig_extend_right(signal, time, ws, tdelta, SIMPLE=None):
     return (signal, time, len(wt) - 1)
 
 
-# In[23]:
-
 
 def reduce_TS_length(data, time, max_len, borders_len):
      """
@@ -341,8 +334,6 @@ borders_len]
 
      return (data, time)
 
-
-# In[24]:
 
 
 def bezier_interpolate_4(valid_arr_vals, valid_arr_time, cn):
@@ -374,8 +365,6 @@ def bezier_interpolate_4(valid_arr_vals, valid_arr_time, cn):
     return (xBezier, yBezier)
 
 
-# In[25]:
-
 
 def Bezier(points, t, cn):
     """
@@ -403,8 +392,6 @@ def Bezier(points, t, cn):
 
     return (pt)
 
-
-# In[26]:
 
 
 def interpolate_corr(obs, obs_times, flag, flag_perm, new_times, new_vals, CONTINUE=None, ALL=None):
@@ -447,8 +434,6 @@ def interpolate_corr(obs, obs_times, flag, flag_perm, new_times, new_vals, CONTI
 
     return (i_obs_vals, i_flag)
 
-
-# In[27]:
 
 
 def dinterpolate_tz(h, t, z, n, time, CONTINUE=None):
@@ -506,8 +491,6 @@ def dinterpolate_tz(h, t, z, n, time, CONTINUE=None):
 
     return (z)
 
-
-# In[84]:
 
 
 def iono_editing(data, flag_perm, dflag, tdelta=1.019577/86400, PLOT=False):

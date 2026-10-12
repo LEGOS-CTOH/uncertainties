@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Fri May 31 14:52:27 2024
 
-@author: tolul
 """
+  Computation of the uncertainties, for all the virtual stations.
+
+
+  @author: Léna TOLU based on P Prandi's code
+  LEGOS/CTOH - 2026
+  Licence CC-BY version 4
+  """
+
 
 import matplotlib.pyplot as plt
 import sys

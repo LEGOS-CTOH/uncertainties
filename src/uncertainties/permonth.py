@@ -5,6 +5,14 @@ import ephem
 import datetime
 from astropy.time import Time
 
+"""                                                                                      
+    Monthly average of the error variance-covariance matrix Sigma..                        
+                                                                                           
+                                                                                           
+    @author: Léna TOLU                                            
+    LEGOS/CTOH - 2026                                                                      
+    Licence CC-BY version 4                                                                
+    """
 
 def years_to_datetime(year):
     """

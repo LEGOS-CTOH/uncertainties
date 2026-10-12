@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-'''
+
+"""                                                                                      
     I/O utilities
-'''
+
+    @author: Léna TOLU based on P Prandi's code                                            
+    LEGOS/CTOH - 2026                                                                      
+    Licence CC-BY version 4                                                                
+    """   
 
 from netCDF4 import Dataset
 import numpy as np
